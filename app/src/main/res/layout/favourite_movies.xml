@@ -6,37 +6,50 @@
     android:layout_height="280dp"
     >
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/favouriteMoviesCard"
+        android:layout_height="match_parent">
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/favMovieImage"
-        android:layout_width="160dp"
-        android:layout_height="230dp"
-        app:riv_corner_radius="35dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/favMovieImage"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:riv_corner_radius="35dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-    <TextView
-        android:id="@+id/favMovieTitle"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:background="@drawable/movie_name_bg"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="Fast And Furios"
-        android:textColor="@color/white"
-        android:textFontWeight="200"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/favMovieImage"
-        app:layout_constraintEnd_toEndOf="@+id/favMovieImage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/favMovieImage"
-        app:layout_constraintTop_toTopOf="@+id/favMovieImage"
-        app:layout_constraintVertical_bias="1.0" />
+            <TextView
+                android:id="@+id/favMovieTitle"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:background="@drawable/movie_name_bg"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Fast And Furios"
+                android:textColor="@color/white"
+                android:textFontWeight="200"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/favMovieImage"
+                app:layout_constraintEnd_toEndOf="@+id/favMovieImage"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/favMovieImage"
+                app:layout_constraintTop_toTopOf="@+id/favMovieImage"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

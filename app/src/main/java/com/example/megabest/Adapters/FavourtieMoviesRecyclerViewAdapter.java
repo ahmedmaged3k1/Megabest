@@ -6,9 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -73,13 +75,16 @@ public class FavourtieMoviesRecyclerViewAdapter extends RecyclerView.Adapter<Fav
         RoundedImageView favMovieImage ;
         TextView favMovieTitle ;
         Intent detailedActivity;
+        CardView favouriteMoviesCard;
 
         public FavouriteMoviesViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             favMovieImage=itemView.findViewById(R.id.favMovieImage);
             favMovieTitle=itemView.findViewById(R.id.favMovieTitle);
+            favouriteMoviesCard=itemView.findViewById(R.id.favouriteMoviesCard);
         }
         public void onBindView(FavourtieMoviesRecyclerViewAdapter.FavouriteMoviesViewHolder holder , int position){
+            holder.favouriteMoviesCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.scale));
             holder.favMovieTitle.setText(movieList.get(position).getTitle().toString());
             Glide.with(holder.itemView.getContext())
                     .load("https://image.tmdb.org/t/p/w500/"+movieList.get(position).getPoster_path())

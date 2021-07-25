@@ -9,11 +9,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -81,13 +83,16 @@ public class PopularMoviesRecyclerViewAdapter  extends RecyclerView.Adapter<Popu
         TextView movieTitle ;
         RatingBar movieRate ;
         Intent detailedActivity;
+        CardView popularMoviesCard;
         public PopularMoviesHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             movieImage=itemView.findViewById(R.id.popularMoviePoster);
             movieTitle=itemView.findViewById(R.id.popularMovieName);
             movieRate=itemView.findViewById(R.id.popularMovieRate);
+            popularMoviesCard=itemView.findViewById(R.id.popularMoviesCard);
         }
         public void onBindView(PopularMoviesHolder holder , int position){
+            popularMoviesCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale));
             holder.movieRate.setRating((movieList.get(position).getVoteAverage()/2));
             holder.movieTitle.setText(movieList.get(position).getTitle().toString());
             Glide.with(holder.itemView.getContext())

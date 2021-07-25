@@ -71,6 +71,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.2.1'
+  // Animatoo Animation
+    implementation 'com.github.mohammadatif:Animatoo:master'
+    // Spark Button
+    compile 'com.github.varunest:sparkbutton:1.0.6'
+
 
 
 }

@@ -6,9 +6,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -73,12 +75,15 @@ public class SimilarMoviesRecyclerView extends RecyclerView.Adapter<SimilarMovie
         RoundedImageView similarMovieImage ;
         TextView similarMovieTitle ;
         Intent detailedActivity;
+        CardView similarMoviesCard;
         public SimilarMoviesViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             similarMovieImage=itemView.findViewById(R.id.similarMovieImage);
             similarMovieTitle=itemView.findViewById(R.id.similarMovieTitle);
+            similarMoviesCard=itemView.findViewById(R.id.similarMoviesCard);
         }
         public void onBindView(SimilarMoviesRecyclerView.SimilarMoviesViewHolder holder , int position){
+            holder.similarMoviesCard.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition));
             holder.similarMovieTitle.setText(movieList.get(position).getTitle().toString());
             Glide.with(holder.itemView.getContext())
                     .load("https://image.tmdb.org/t/p/w500/"+movieList.get(position).getPosterPath())
