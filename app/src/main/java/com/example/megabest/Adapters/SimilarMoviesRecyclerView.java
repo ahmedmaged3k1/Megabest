@@ -1,7 +1,10 @@
 package com.example.megabest.Adapters;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -97,7 +102,11 @@ public class SimilarMoviesRecyclerView extends RecyclerView.Adapter<SimilarMovie
                     detailedActivity.putExtra("Movie Title",movieList.get(position).getTitle());
                     detailedActivity.putExtra("Movie Id",String.valueOf(movieList.get(position).getId()));
                     Log.d(TAG, "onClick: movie id "+movieList.get(position).getId());
+                    Fade fade = new Fade();
+
+                   // ActivityOptions optionsCompat = ActivityOptions.makeSceneTransitionAnimation((Activity) context,similarMovieImage, ViewCompat.getTransitionName(similarMovieImage));
                     context.startActivity(detailedActivity);
+
                 }
             });
 

@@ -1,5 +1,7 @@
 package com.example.megabest.Adapters;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -107,6 +110,7 @@ public class PopularMoviesRecyclerViewAdapter  extends RecyclerView.Adapter<Popu
                     detailedActivity.putExtra("Movie Title",movieList.get(position).getTitle());
                     detailedActivity.putExtra("Movie Id",String.valueOf(movieList.get(position).getId()));
                     Log.d(TAG, "onClick: movie id "+movieList.get(position).getId());
+                 //   ActivityOptions optionsCompat = ActivityOptions.makeSceneTransitionAnimation((Activity) context,movieImage,"image");
                     context.startActivity(detailedActivity);
 
 
