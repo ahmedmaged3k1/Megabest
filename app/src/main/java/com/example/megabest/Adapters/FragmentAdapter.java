@@ -39,7 +39,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch (position){
             case 1:
                 return new FavouriteFragment();
-            case 2 : return new ProfileFragment();
+
 
         }
         return new HomeFragment();
