@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 import com.example.megabest.Model.FavouriteMovie;
 import com.example.megabest.Model.Movie;
 
-    @Database(entities = FavouriteMovie.class ,version = 3)
+    @Database(entities = FavouriteMovie.class ,version = 6)
 public  abstract class MoviesDataBase extends RoomDatabase  {
     private static MoviesDataBase instance ;
     public  abstract MovieDao movieDao();

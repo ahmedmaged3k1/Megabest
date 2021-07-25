@@ -89,7 +89,7 @@ public class FavouriteFragment extends Fragment {
 
     }
     private void observeFavMovies(){
-        favouriteMovieRepositery= new FavouriteMovieRepositery(getContext());
+        favouriteMovieRepositery= FavouriteMovieRepositery.getInstance(getContext());
         favouriteMovieRepositery.getFavouriteMovies().observe(getActivity(), new Observer<List<FavouriteMovie>>() {
             @Override
             public void onChanged(List<FavouriteMovie> favouriteMovies) {

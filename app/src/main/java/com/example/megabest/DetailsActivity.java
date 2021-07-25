@@ -3,6 +3,7 @@ package com.example.megabest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,7 +43,7 @@ public class DetailsActivity extends AppCompatActivity {
     List<Movie> movieList = new ArrayList<>();
     MovieViewModel movieViewModel ;
     FavouriteMovieViewModel favouriteMovieViewModel;
-    FavouriteMovieRepositery favouriteMovieRepositery;
+    int cnt = 0 ;
 
 
     @Override
@@ -81,15 +82,47 @@ public class DetailsActivity extends AppCompatActivity {
         });
     }
     private void setFavourite(){
+
         favButton=findViewById(R.id.favButton);
-        movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
-        //favouriteMovieViewModel= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(FavouriteMovieViewModel.class);
-        favouriteMovieRepositery= new FavouriteMovieRepositery(this);
+        favouriteMovieViewModel= ViewModelProviders.of(this).get(FavouriteMovieViewModel.class);
+        favouriteMovieViewModel.getFavouriteMovies().observe(this, new Observer<List<FavouriteMovie>>() {
+            @Override
+            public void onChanged(List<FavouriteMovie> favouriteMovies) {
+                    for(int i = 0 ; i<favouriteMovies.size();i++){
+                        Log.d(TAG, "setFavourite:  id is "+favouriteMovies.get(i).getId());
+
+                        if(Integer.parseInt(getIntent().getStringExtra("Movie Id"))==favouriteMovies.get(i).getId()){
+                            Log.d(TAG, "setFavourite: found  id is "+favouriteMovies.get(i).getId());
+                            favouriteMovies.get(i).setFav(0);
+                            cnt=1;
+                            break;
+                        }
+                        cnt=0;
+                        Log.d(TAG, "onChanged: shaddyyasdyasdasdads");
+
+                    }
+                Log.d(TAG, "setFavourite: is     "+cnt);
+                if(cnt==1){
+                    favButton.setImageResource(R.drawable.ic_baseline_favorite_24);
+                }
+            }
+        });
+
+
         favButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                favButton.setImageResource(R.drawable.ic_baseline_favorite_24);
-                favouriteMovieRepositery.insertFavouriteMovie(new FavouriteMovie(getIntent().getStringExtra("BackPath Poster"),getIntent().getStringExtra("Movie Title"),1));
+                if(cnt==1){
+                    favButton.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                    favouriteMovieViewModel.deleteFavouriteMovie(new FavouriteMovie(getIntent().getStringExtra("BackPath Poster"),getIntent().getStringExtra("Movie Title")
+                            ,Integer.parseInt(getIntent().getStringExtra("Movie Id")),1));
+                }
+                else{
+                    favButton.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    favouriteMovieViewModel.insertFavouriteMovie(new FavouriteMovie(getIntent().getStringExtra("BackPath Poster"),getIntent().getStringExtra("Movie Title")
+                            ,Integer.parseInt(getIntent().getStringExtra("Movie Id")),1));
+                }
+
               // movieViewModel.insertFavouriteMovie(new FavouriteMovie(getIntent().getStringExtra("BackPath Poster"),getIntent().getStringExtra("Movie Title"),1));
             }
         });

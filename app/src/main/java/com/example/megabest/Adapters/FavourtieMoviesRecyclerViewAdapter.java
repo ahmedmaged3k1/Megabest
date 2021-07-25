@@ -72,6 +72,7 @@ public class FavourtieMoviesRecyclerViewAdapter extends RecyclerView.Adapter<Fav
     public class FavouriteMoviesViewHolder extends RecyclerView.ViewHolder {
         RoundedImageView favMovieImage ;
         TextView favMovieTitle ;
+        Intent detailedActivity;
 
         public FavouriteMoviesViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -83,6 +84,7 @@ public class FavourtieMoviesRecyclerViewAdapter extends RecyclerView.Adapter<Fav
             Glide.with(holder.itemView.getContext())
                     .load("https://image.tmdb.org/t/p/w500/"+movieList.get(position).getPoster_path())
                     .into(holder.favMovieImage);
+
 
 
         }

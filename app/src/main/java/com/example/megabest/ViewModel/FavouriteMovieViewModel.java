@@ -1,7 +1,10 @@
 package com.example.megabest.ViewModel;
 
+import android.app.Application;
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -11,10 +14,11 @@ import com.example.megabest.Repositories.MoviesRepository;
 
 import java.util.List;
 
-public class FavouriteMovieViewModel extends ViewModel {
+public class FavouriteMovieViewModel extends AndroidViewModel {
     private FavouriteMovieRepositery moviesRepository;
-    public FavouriteMovieViewModel(Context context) {
-        moviesRepository= FavouriteMovieRepositery.getInstance(context);
+    public FavouriteMovieViewModel(@NonNull Application application) {
+        super(application);
+        moviesRepository= FavouriteMovieRepositery.getInstance(application);
     }
 
 

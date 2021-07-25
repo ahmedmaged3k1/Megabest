@@ -8,13 +8,14 @@ import androidx.room.PrimaryKey;
 public class FavouriteMovie {
     private String poster_path ;
     private String title ;
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey (autoGenerate = false)
     private int id ;
     private int fav ;
 
-    public FavouriteMovie(String poster_path, String title, int fav) {
+    public FavouriteMovie(String poster_path, String title, int id, int fav) {
         this.poster_path = poster_path;
         this.title = title;
+        this.id = id;
         this.fav = fav;
     }
 
