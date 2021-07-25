@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:windowSoftInputMode="adjustResize"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <TextView
+        android:id="@+id/helloName"
+
+        android:layout_width="345dp"
+        android:layout_height="61dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="Hello James , "
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="283dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Look for Your Favourite Movie"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchMoviesButton"
+        style="@style/CardView.Dark"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/gradient"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Search "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/popularMovies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popularMovies"
+        android:layout_width="409dp"
+        android:layout_height="420dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/round_corners"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toTopOf="@+id/searchMoviesButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchMovies"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Search"
+            android:windowSoftInputMode="adjustResize" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
