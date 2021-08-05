@@ -17,26 +17,25 @@
         android:gravity="center"
         android:text="Hello James , "
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="@dimen/_25ssp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="283dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="351dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:text="Look for Your Favourite Movie"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -64,31 +63,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/round_corners"
-
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         app:layout_constraintBottom_toTopOf="@+id/searchMoviesButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:startIconDrawable="@drawable/ic_baseline_search_24">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/searchMovies"
+        <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:hint="Search"
-            android:windowSoftInputMode="adjustResize" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:background="@drawable/round_corners"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchMovies"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Search"
+                    android:windowSoftInputMode="adjustResize" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
