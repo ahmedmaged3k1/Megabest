@@ -17,12 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Megabest"
         android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
-        <activity android:name=".TrailerPlayer"></activity>
-        <activity android:name=".DetailsActivity" />
-        <activity android:name=".Home" />
-        <activity android:name=".Login.Register" />
-        <activity android:name=".Login.Login" />
-        <activity android:name=".Login.MainActivity">
+        <activity android:name=".app.TrailerPlayerActivity"></activity>
+        <activity android:name=".app.DetailsActivity" />
+        <activity android:name=".app.features.home.HomeActivity" />
+        <activity android:name=".app.RegisterActivity" />
+        <activity android:name=".app.LoginActivity" />
+        <activity android:name=".app.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
