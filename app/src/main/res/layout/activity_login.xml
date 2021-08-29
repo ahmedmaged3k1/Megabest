@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    tools:context=".Login.Login">
+    tools:context=".app.features.login.LoginActivity">
 
     <TextView
 
