@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.megabest.app.features.home.HomeActivity;
 import com.example.megabest.R;
+import com.example.megabest.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,8 +41,9 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar loginProgressBar;
     FirebaseAuth firebaseAuth;
     DatabaseReference firebaseDatabase;
+    ActivityMainBinding binding ;
 
-    List<Integer> favouriteMovies =  new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

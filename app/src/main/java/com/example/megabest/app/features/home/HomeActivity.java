@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.megabest.R;
 import com.example.megabest.app.features.homeFragment.HomeFragment;
+import com.example.megabest.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -25,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
         sendUserInformation();
         setFragments();
     }
@@ -34,9 +37,10 @@ public class HomeActivity extends AppCompatActivity {
         bundle.putInt("Id",getIntent().getIntExtra("User ID",0));
         Log.d(TAG, "onCreate: home activity  "+bundle.get("Name"));
         HomeFragment.newInstance(bundle);
-        //homeFragment.setArguments(bundle);
+
     }
     private void setFragments(){
+
         tabManger= findViewById(R.id.tabController);
 
        KeyboardVisibilityEvent.setEventListener(

@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.megabest.databinding.ActivityMainBinding;
 import com.example.megabest.entities.Movie;
 import com.example.megabest.R;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -24,11 +25,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.GET;
+
 import static android.content.ContentValues.TAG;
 
 public class SimilarMoviesRecyclerView extends RecyclerView.Adapter<SimilarMoviesRecyclerView.SimilarMoviesViewHolder> {
     private Context context ;
-    private List<Movie> movieList = new ArrayList<>();
+    private List<Movie> movieList ;
+    private ActivityMainBinding binding;
 
     public SimilarMoviesRecyclerView(Context context, List<Movie> movieList) {
         this.context = context;
@@ -56,6 +60,7 @@ public class SimilarMoviesRecyclerView extends RecyclerView.Adapter<SimilarMovie
     @NotNull
     @Override
     public SimilarMoviesViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.similar_movies,parent,false);
         return new SimilarMoviesRecyclerView.SimilarMoviesViewHolder(view);
     }
