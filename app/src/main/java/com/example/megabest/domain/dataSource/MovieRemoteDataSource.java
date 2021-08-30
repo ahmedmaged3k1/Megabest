@@ -9,7 +9,6 @@ import com.example.megabest.domain.core.Credentials;
 import com.example.megabest.domain.core.network.RetrofitInstance;
 import com.example.megabest.domain.dataSource.room.MoviesDataBase;
 import com.example.megabest.domain.repositories.MovieRemoteRepository;
-import com.example.megabest.domain.repositories.MoviesRepository;
 import com.example.megabest.entities.Movie;
 import com.example.megabest.entities.MovieSearchResponse;
 import com.example.megabest.entities.MovieTrailer;

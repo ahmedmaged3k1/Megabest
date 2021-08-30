@@ -1,4 +1,4 @@
-package com.example.megabest.app.features.favourite;
+package com.example.megabest.app.features.favouriteFragment;
 
 import android.content.Context;
 import android.content.Intent;

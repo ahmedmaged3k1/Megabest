@@ -57,7 +57,6 @@ public class MovieLocalDataSource implements MovieLocalRepository {
 
     @Override
     public LiveData<List<FavouriteMovie>> getFavouriteMovies() {
-        Log.d(TAG, "getFavouriteMovies: "+moviesDataBase.movieDao().getFavMovies().getValue().size());
         return moviesDataBase.movieDao().getFavMovies();
     }
 }

@@ -2,8 +2,6 @@ package com.example.megabest.app.features.movieDetails;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +18,7 @@ import com.example.megabest.R;
 import com.example.megabest.entities.FavouriteMovie;
 import com.example.megabest.entities.Movie;
 import com.example.megabest.entities.MovieTrailer;
-import com.example.megabest.app.features.favourite.FavouriteMovieViewModel;
+import com.example.megabest.app.features.favouriteFragment.FavouriteMovieViewModel;
 import com.example.megabest.app.features.homeFragment.MovieViewModel;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -61,7 +59,9 @@ public class DetailsActivity extends AppCompatActivity {
         movieTrailerButton=findViewById(R.id.movieTrailerButton);
         Intent trailerActivity = new Intent(DetailsActivity.this, TrailerPlayer.class);
         trailerActivity.putExtra("Movie Id",getIntent().getStringExtra("Movie Id"));
-        movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+       // movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+
+        movieViewModel = new MovieViewModel(getApplication());
         //trailerActivity.putExtra("Video Key",movieViewModel.getTrailerr(getIntent().getStringExtra("Movie Id")));
         movieViewModel.getTrailer(getIntent().getStringExtra("Movie Id")).observe(this, new Observer<List<MovieTrailer>>() {
             @Override
@@ -82,7 +82,7 @@ public class DetailsActivity extends AppCompatActivity {
     private void setFavourite(){
 
         favButton=findViewById(R.id.favButton);
-        favouriteMovieViewModel= ViewModelProviders.of(this).get(FavouriteMovieViewModel.class);
+        favouriteMovieViewModel= new FavouriteMovieViewModel(getApplication());
         favouriteMovieViewModel.getFavouriteMovies().observe(this, new Observer<List<FavouriteMovie>>() {
             @Override
             public void onChanged(List<FavouriteMovie> favouriteMovies) {
@@ -127,7 +127,8 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
     private void getMovieKey(){
-        movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+        //movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+        movieViewModel = new MovieViewModel(getApplication());
         movieViewModel.getTrailer(getIntent().getStringExtra("Movie Id")).observe(this, new Observer<List<MovieTrailer>>() {
             @Override
             public void onChanged(List<MovieTrailer> movieTrailers) {
@@ -159,7 +160,8 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
     private void observePopularMovies(String id){
-        movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+        //movieViewModel =new ViewModelProvider(this).get(MovieViewModel.class);
+        movieViewModel = new MovieViewModel(getApplication());
         movieViewModel.getSimilarMoviesMutableLiveData(id).observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(List<Movie> movies) {

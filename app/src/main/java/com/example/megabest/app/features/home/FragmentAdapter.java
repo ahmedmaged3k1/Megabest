@@ -8,7 +8,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.megabest.app.features.homeFragment.HomeFragment;
-import com.example.megabest.app.features.favourite.FavouriteFragment;
+import com.example.megabest.app.features.favouriteFragment.FavouriteFragment;
 
 import org.jetbrains.annotations.NotNull;
 

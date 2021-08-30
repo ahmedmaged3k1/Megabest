@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     TabLayout tabManger ;
     ViewPager2 viewPagerAdapter ;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
