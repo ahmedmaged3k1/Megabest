@@ -1,20 +1,16 @@
 package com.example.megabest.domain.dataSource;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
 import com.example.megabest.domain.dataSource.room.MoviesDataBase;
-import com.example.megabest.domain.repositories.FavouriteMovieRepository;
 import com.example.megabest.domain.repositories.MovieLocalRepository;
 import com.example.megabest.entities.FavouriteMovie;
 
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
-import static android.content.ContentValues.TAG;
 
 public class MovieLocalDataSource implements MovieLocalRepository {
     private static MovieLocalDataSource instance;

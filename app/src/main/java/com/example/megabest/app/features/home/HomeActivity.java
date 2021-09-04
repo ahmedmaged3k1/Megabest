@@ -1,15 +1,14 @@
 package com.example.megabest.app.features.home;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.example.megabest.R;
 import com.example.megabest.app.features.homeFragment.HomeFragment;
-import com.example.megabest.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -18,8 +17,8 @@ import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventList
 import static android.content.ContentValues.TAG;
 
 public class HomeActivity extends AppCompatActivity {
-    TabLayout tabManger ;
-    ViewPager2 viewPagerAdapter ;
+    TabLayout tabManger;
+    ViewPager2 viewPagerAdapter;
 
 
     @Override
@@ -31,38 +30,40 @@ public class HomeActivity extends AppCompatActivity {
         sendUserInformation();
         setFragments();
     }
-    private void sendUserInformation(){
-        Bundle bundle =new Bundle();
-        bundle.putString("Name",getIntent().getStringExtra("UserName"));
-        bundle.putInt("Id",getIntent().getIntExtra("User ID",0));
-        Log.d(TAG, "onCreate: home activity  "+bundle.get("Name"));
+
+    private void sendUserInformation() {
+        Bundle bundle = new Bundle();
+        bundle.putString("Name", getIntent().getStringExtra("UserName"));
+        bundle.putInt("Id", getIntent().getIntExtra("User ID", 0));
+        Log.d(TAG, "onCreate: home activity  " + bundle.get("Name"));
         HomeFragment.newInstance(bundle);
 
     }
-    private void setFragments(){
 
-        tabManger= findViewById(R.id.tabController);
+    private void setFragments() {
 
-       KeyboardVisibilityEvent.setEventListener(
+        tabManger = findViewById(R.id.tabController);
+
+        KeyboardVisibilityEvent.setEventListener(
                 HomeActivity.this,
                 new KeyboardVisibilityEventListener() {
                     @Override
                     public void onVisibilityChanged(boolean isOpen) {
-                        if(isOpen){
+                        if (isOpen) {
                             tabManger.setVisibility(View.GONE);
                         } else {
                             tabManger.setVisibility(View.VISIBLE);
                         }
                     }
                 });
-        viewPagerAdapter=findViewById(R.id.viewPager);
+        viewPagerAdapter = findViewById(R.id.viewPager);
         viewPagerAdapter.setUserInputEnabled(false);
-        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(),getLifecycle());
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), getLifecycle());
         viewPagerAdapter.setAdapter(fragmentAdapter);
         tabManger.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-              //  sendUserInformation();
+                //  sendUserInformation();
 
                 viewPagerAdapter.setCurrentItem(tab.getPosition());
                 //sendUserInformation();

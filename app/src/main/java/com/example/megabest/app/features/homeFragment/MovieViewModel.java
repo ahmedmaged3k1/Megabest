@@ -4,8 +4,6 @@ import android.app.Application;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.example.megabest.domain.dataSource.MovieRemoteDataSource;
 import com.example.megabest.domain.usecase.SearchMoviesUseCase;
 import com.example.megabest.entities.Movie;
 import com.example.megabest.entities.MovieTrailer;

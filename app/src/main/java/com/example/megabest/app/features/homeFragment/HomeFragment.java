@@ -109,7 +109,6 @@ public class HomeFragment extends Fragment {
 
     private void setPopularMovieRecyclerView() {
         popularMovieRecyclerView = view.findViewById(R.id.popularMovies);
-        Log.d(TAG, "setPopularMovieRecyclerView: Movie" + movieList.size());
         popularMoviesRecyclerViewAdapter = new PopularMoviesRecyclerViewAdapter(movieList, getContext());
         popularMovieRecyclerView.setAdapter(popularMoviesRecyclerViewAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -127,7 +126,6 @@ public class HomeFragment extends Fragment {
         movieViewModel.getPopularMoviesMutableLiveData().observe(getActivity(), new Observer<List<Movie>>() {
             @Override
             public void onChanged(List<Movie> movies) {
-                Log.d(TAG, "onChanged: movieModel " + movies.size());
                 movieList = movies;
                 movieListTemp = movies;
                 popularMoviesRecyclerViewAdapter.setMovieList(movieList);
