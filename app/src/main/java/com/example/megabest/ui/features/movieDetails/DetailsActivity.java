@@ -53,7 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
         observePopularMovies(getIntent().getStringExtra("Movie Id"));
         setFavourite();
         openTrailer();
-
+     //   setBackButton();
     }
 
     private void openTrailer() {
@@ -135,7 +135,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    private void setBackButton() {
+    /*private void setBackButton() {
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +144,7 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(home);
             }
         });
-    }
+    }*/
 
     private void setData() {
         movieImage = findViewById(R.id.detailedMoviePoster);

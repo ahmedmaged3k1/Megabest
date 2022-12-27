@@ -36,20 +36,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="33dp"
-            android:layout_height="43dp"
-            android:clickable="true"
-            app:layout_constraintBottom_toBottomOf="@+id/movieDetailedName"
-            app:layout_constraintEnd_toStartOf="@+id/movieDetailedName"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.81"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/favButton"
             android:layout_width="44dp"
             android:layout_height="43dp"
