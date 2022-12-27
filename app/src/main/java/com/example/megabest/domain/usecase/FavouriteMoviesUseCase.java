@@ -5,9 +5,9 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 
-import com.example.megabest.domain.dataSource.MovieLocalDataSource;
+import com.example.megabest.data.dataSource.localDataSource.MovieLocalDataSource;
 import com.example.megabest.domain.repositories.MovieLocalRepository;
-import com.example.megabest.entities.FavouriteMovie;
+import com.example.megabest.data.dataSource.localDataSource.entities.FavouriteMovie;
 
 import java.util.List;
 

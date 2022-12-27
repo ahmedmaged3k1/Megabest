@@ -4,10 +4,10 @@ import android.app.Application;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.megabest.domain.dataSource.MovieRemoteDataSource;
+import com.example.megabest.data.dataSource.RemoteDataSource.MovieRemoteDataSource;
 import com.example.megabest.domain.repositories.MovieRemoteRepository;
-import com.example.megabest.entities.Movie;
-import com.example.megabest.entities.MovieTrailer;
+import com.example.megabest.data.dataSource.RemoteDataSource.entities.Movie;
+import com.example.megabest.data.dataSource.RemoteDataSource.entities.MovieTrailer;
 
 import org.jetbrains.annotations.NotNull;
 

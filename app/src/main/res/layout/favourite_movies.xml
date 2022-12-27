@@ -14,17 +14,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/favMovieImage"
                 android:layout_width="160dp"
                 android:layout_height="230dp"
-                app:riv_corner_radius="35dp"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.533"
+                app:riv_corner_radius="35dp"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <TextView

@@ -2,8 +2,8 @@ package com.example.megabest.domain.repositories;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.megabest.entities.Movie;
-import com.example.megabest.entities.MovieTrailer;
+import com.example.megabest.data.dataSource.RemoteDataSource.entities.Movie;
+import com.example.megabest.data.dataSource.RemoteDataSource.entities.MovieTrailer;
 
 import java.util.List;
 

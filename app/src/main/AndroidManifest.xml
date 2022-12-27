@@ -15,12 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Megabest"
         android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
-        <activity android:name=".app.features.movieDetails.TrailerPlayer"></activity>
-        <activity android:name=".app.features.movieDetails.DetailsActivity" />
-        <activity android:name=".app.features.home.HomeActivity" />
-        <activity android:name=".app.features.login.RegisterActivity" />
-        <activity android:name=".app.features.login.LoginActivity" />
-        <activity android:name=".app.features.login.SwipeActivity">
+        <activity android:name=".ui.features.movieDetails.TrailerPlayer"></activity>
+        <activity android:name=".ui.features.movieDetails.DetailsActivity" />
+        <activity android:name=".ui.features.home.HomeActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.features.login.RegisterActivity" />
+        <activity android:name=".ui.features.login.LoginActivity" />
+        <activity android:name=".ui.features.login.SwipeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

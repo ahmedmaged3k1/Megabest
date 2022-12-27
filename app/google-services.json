@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "512087988871",
-    "project_id": "megabest-7e058",
-    "storage_bucket": "megabest-7e058.appspot.com"
+    "project_number": "1025826753182",
+    "project_id": "megabes-69a42",
+    "storage_bucket": "megabes-69a42.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:512087988871:android:c1501f23693eff74abb622",
+        "mobilesdk_app_id": "1:1025826753182:android:62afb034437334f467898f",
         "android_client_info": {
           "package_name": "com.example.megabest"
         }
       },
       "oauth_client": [
         {
-          "client_id": "512087988871-l8mjg95clrph28phpkq0qou7lo2odv1j.apps.googleusercontent.com",
+          "client_id": "1025826753182-7933flss4s8e36g2cs9ib4qmd56tm57c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDUpAMl9aZvIl7O0JPrSG-qo3iGU_VTLOE"
+          "current_key": "AIzaSyCdwxfnFy4lhHPYXMGZ5KI9pk6XtTmUWac"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "512087988871-l8mjg95clrph28phpkq0qou7lo2odv1j.apps.googleusercontent.com",
+              "client_id": "1025826753182-7933flss4s8e36g2cs9ib4qmd56tm57c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

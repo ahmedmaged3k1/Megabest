@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
     buildFeatures{
         viewBinding true
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId "com.example.megabest"
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -79,6 +79,13 @@ dependencies {
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.2.1'
 
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    //Hilt
+
+    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.33-beta'
+    implementation 'com.google.dagger:hilt-android:2.33-beta'
+
+
 
 
 }
